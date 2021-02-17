@@ -10,7 +10,7 @@ public class AddressBookMain {
 		contact[0] = first_name;
 		System.out.println("Enter your Last Name");
 		String last_name = input.next();
-    contact[1]=last_name;
+                contact[1]=last_name;
 		System.out.println("Enter your City name");
 		String city = input.next();
 		contact[2] = city;
