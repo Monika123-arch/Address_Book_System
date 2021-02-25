@@ -23,6 +23,24 @@ public class AddressBookMain {
             System.out.print((index + 1)  + ".");
             if (index == 0) {
                 firstNameDuplicacyCheck();
+
+    static String[] info, personFirstname;
+    static String name, addressBookName, firstName;
+    static ArrayList<String> namelist = new ArrayList<>();
+    static ArrayList<String> firstNameList = new ArrayList<>();
+    static HashMap<String, HashMap> addressbooks = new HashMap<>();
+    static HashMap<String, String[]> contacts = new HashMap<>();
+    static String[] contact = new String[8];
+    static int index;
+    // Taking a details input in an array
+    public static String[] contactDetailsInput() {
+        System.out.println("Enter your details accordingly \n1. First Name\n2. Last Name\n"
+                + "3. House number\n4. City\n5. State\n6. Pin Code\n" +
+                    "7.  Phone number\n8. e-mail");
+        for (int index = 0; index < contact.length; index++) {
+            System.out.print((index + 1)  + ".");
+            if (index == 0) {
+                contact = firstNameDuplicacyCheck();
             } else
                 contact[index] = input.next();
         }
@@ -36,6 +54,10 @@ public class AddressBookMain {
     }
     // To check if First name is already in some other conatct name
     public static void firstNameDuplicacyCheck() {
+        return contact;
+    }
+    // To check if First name is already in some other conatct name
+    public static String[] firstNameDuplicacyCheck() {
         boolean check = true;
         while(check) {
             firstName = input.next();
@@ -47,6 +69,7 @@ public class AddressBookMain {
                 check = false;
             }
         }
+        return contact;
     }
     // To update the contact details if enquired for
     public static String[] updateContactDetails(String[] contact) {
@@ -150,7 +173,7 @@ public class AddressBookMain {
             System.out.println(index + ". " + info[index]);
         }
     }
-    // To search person by the name of city or state
+               // To search person by the name of city or state
     public static void searchPersons() {
         personNameList = new ArrayList<>();
         System.out.println("Enter the corresponding number \n1. city\n 2. state\n" +
@@ -182,10 +205,12 @@ public class AddressBookMain {
                 System.out.println("Invalid Input.Exiting, Try Again");
         }
     }
+
     public static void main(String[] args) {
-        System.out.println("WELCOME to Address Book Program");
+        System.out.println("Welcome to Address Book Program");
         programStart();
         checkActions();
-        System.out.println("***program end****");
+        System.out.println("***program end******");
     }
 }
+
